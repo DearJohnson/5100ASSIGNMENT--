@@ -1,0 +1,291 @@
+1.Hiking
+
+Things:
+Consumer:
+    Data: Name, ID
+    Behaviors: chooseHotel, rentCar,chooseRestaurant, pay
+
+ReachNow:
+    Data: Cars[] car, BankAccount 
+    Behaviors: makePizza, refund, receiveMoney, paymentConfirmation
+
+Car:
+    Data: Price, Category, Availability, Number
+    Behaviors: addOil
+
+CreditCard
+    Data: Name, Number, Company, Date, SecurityCode
+    Behaviors:
+
+Restaurant
+    Data: Type, Price
+    Behaviors: 
+
+Park
+    Data: Type, Price, Location
+    Behaviors: 
+
+Hotel
+    Data: Type, Price, Location, Availability
+    Behaviors: 
+
+Sequence of invoking behaviors on Objects：
+
+RentCar:
+Consumer ze,
+ReachNow reachnow,
+CreditCard creditcrad,
+Car[] car[]
+
+        ze.rentCar -> Price, Category, Availability: Collection of ReachNow 
+        CarNumber =1
+        for(CarNumber,(Category==SUV)&&(Availability==Today),CarNumber++)
+             i=CarNumber
+        ze.payCar[i]->creditCard, address, reachnow: paymentConfirmation
+
+FillGas:
+        for(low oil,high oil ,)
+        {
+         car[i].addOil
+}
+
+HaveLunch:
+        ze.chooseRestaurant -> Price, Type: Collection of Restaurants
+        for(restaurantNumber,(type==hotpot)&&(Price<20),restaurantNumber++)
+             i=restaurantNumber
+        ze.payrestaurant[i]->creditCard, address, Restaurant: paymentConfirmation
+
+BuyTicket:
+        ze.choosePark -> Price, Type, Location: Collection of Parks
+        for(parkNumber,Location<20,parkNumber++)
+             i=parkNumber
+        ze.payTicketPark[i]->creditCard, address, Park: paymentConfirmation
+
+BookHotel:
+        ze.chooseHotel -> Type, Price, Location, Availability: Collection of Hotels
+        for(hotelNumber,(Availability==today)&&(Price<200),hotelNumber++)
+             i=hotelNumber
+        ze.payhotel[i]->creditCard, address, hotel: paymentConfirmation
+        
+2.Organize a career fair.
+
+1. Do some advertisements.
+2. Rent a meeting room.
+3. schedule a time.
+4. Choose some companies that could attend the career fair.
+
+Things:
+
+Organizer
+    Data: Name, ID
+    Behaviors: findCompanies, findHotels, pay
+
+AdvertisementWebsite
+    Data: Type, Price
+    Behaviors: 
+
+HotelWebsite
+    Data: MeetingRoomSize, MeetRoomSchedule 
+    Behaviors:searchForAvailableHotels
+
+CompanyWebsite
+    Data: Name, Scale, Location, Position 
+    Behaviors: searchForCompanies
+
+CreditCard
+    Data: Name, Number, Company, Date, SecurityCode
+    Behaviors:
+
+Internet
+    Data: Price, PageView
+    Behaviors: searchForAdvertisement
+
+Sequence of invoking behaviors on Objects：
+
+DoAdvertisements:
+Organizer ze,
+Advertisement advertisement,
+CreditCard creditcrad,
+HotelWebsite hotelwebsite,
+CompanyWebsite companywebsite
+
+If Internet.isAvailable
+    ze.searchForAdvertisement -> Price, PageView: Collection of AdvertisementWebsites
+    for(websiteNumber,Price<1000&&PageView>2000,websiteNumber++)
+             i=websiteNumber
+    ze.payPizza[i]->creditCard, address, AdvertisementWebsite: paymentConfirmation
+
+RentMeetingRoom&ScheduleTime: 
+   If Internet.isAvailable
+        ze.searchForHotel -> MeetingRoomSize, MeetRoomAvailableSchedule: Collection of HotelWebsites
+   for(websiteNumber,MeetRoomAvailableSchedule==9/29/2017&&MeetingRoomSize>1500,websiteNumber++)
+            i=websiteNumber
+   ze.payHotel[i]->creditCard, address, HotelWebsite: paymentConfirmation
+        
+ChooseCompanies:
+   If Internet.isAvailable
+    ze.searchForCompany -> Name, Scale, Location, Position: Collection of CompanyWebsites
+   for(websiteNumber,Position==InformationSystemEngineer,websiteNumber++)
+    i=websiteNumber
+   ze.findCompany[i]->Name, Scale, Location, Position: attendConfirmation
+  
+3.Order Pizza from Pizza Hut.
+
+1. Use APP to choose different pizzas.
+2. Order a pizza online.
+3. Pay for the order.
+4. Receive the pizza.
+5. Check the pizza.
+
+Things:
+Consumer:
+    Data: Name, ID
+    Behaviors: choosePizzas, orderaPizza,checkThePizza, pay,receiveThePizza
+
+PizzaHut:
+    Data: Product[] products, BankAccount 
+    Behaviors: makePizza, refund, receiveMoney, paymentConfirmation
+
+Pizza:
+    Data: Price, Size, Category, Number
+    Behaviors: remakePizza[]
+
+CreditCard
+    Data: Name, Number, Company, Date, SecurityCode
+    Behaviors:
+
+Sequence of invoking behaviors on Objects：
+
+OrderPizza:
+Consumer ze,
+PizzaHut pizzahut,
+CreditCard creditcrad,
+Pizza pizza
+
+If pizzahut.isOpen
+        ze.choosePizzas -> Price, Size, Category: Collection of Pizza 
+        pizzaNumber =1
+        for(pizzaNumber,button[pizzaNumber].Click=ture,pizzaNumber++)
+             i=pizzaNumber
+        ze.payPizza[i]->creditCard, address, pizzahut: paymentConfirmation
+
+CheckPizza:
+        
+        for(pizza,pizza is good,pizzahut.remakePizza[i])
+        {
+         ze.returnPizza
+}
+
+
+4.Design a code sharing platform.
+
+1. Define product.
+2. Make prototypes.
+3. Setting Priorities.
+4. Launch.
+5. Test.
+
+Things:
+Product Manager
+    Data: Name, ID
+    Behaviors: defineProduct, makeReport
+
+UX Designer
+    Data: Name, ID
+    Behaviors: makeprototypes
+
+Manager
+    Data: Name, ID 
+    Behaviors: setPriorities
+
+Programmer
+    Data: Name, ID
+    Behaviors: launch, improve, debug
+
+Tester
+    Data: Name, ID
+    Behaviors: test, fingBug
+
+Customer:
+Data: Name, ID
+    Behaviors: feedback, makeSurvey
+
+Sequence of invoking behaviors on Objects：
+
+DefineProduct:
+Product Manager pm,
+UX Designer ux,
+Manager m,
+Programmer p,
+Tester t,
+Customer c
+
+DefineProduct
+    pm.defineProduct -> customers’ need: Collection of Survey
+       
+MakePrototypes             
+   for(ux.makePrototypes -> pm’ defining,feedback is good enough, ux.remakePrototypes)
+
+SettingPriorities
+   m.settingPriorities -> pms’ report
+
+Launch      
+   for(p.launch -> pm’ defining, no bug&& realize function , )
+     {
+         program         
+         debug      
+}
+
+Test
+   for(t.findBug -> test p’ work, no bug , p.debug )
+   
+5.Design a soft-drink/snacks vending machine.
+
+1. Find a machine-designing company that could satisfy their need.
+2. The company produce this product.
+3. Receive the product and test the machine.
+4. Let company improve it.
+5. Pay for the machine.
+
+Things:
+Consumer
+    Data: Name, ID
+    Behaviors: findCompanies, testMachine, pay
+
+Industry
+    Data: Company[] companies
+    Behaviors: searchForCompanies
+
+Company3
+    Data: Name, Product[] products, BankAccount 
+    Behaviors: produceMachine, improveMachine, receiveMoney, paymentConfirmation
+
+Machine
+    Data: Price, Size, Function, Brand
+    Behaviors:
+
+CreditCard
+    Data: Name, Number, Company, Date, SecurityCode
+    Behaviors:
+
+Sequence of invoking behaviors on Objects：
+
+FindMachineCompany:
+Consumer ze,
+Industry industry,
+Company3 company3,
+Machine machine,
+CreditCard creditcard
+
+    ze.findCompanies -> industry: Collection of Industry 
+        companyNumber=0
+        for(companyNumber,companyNumber=3,companyNumber++)
+             
+
+CompanyProduceMachine:
+        Company3.produceMachine -> Size, Function, Price, Brand : Collection of Machine
+ 
+TestMachine&Payment:
+
+        for(machine,machine is good,(Company3.improveMachine->Size, Function, Price, Brand : Collection of Machine))
+        ze.pay -> creditcard, address, company3: paymentConfirmation
