@@ -1,11 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package javaApplication1;
-import java.util.Scanner;
-
 //Q1
 
 // 1. super():it does not have parent class to extend
@@ -69,10 +61,7 @@ public class OmitVowel {
 
 package anagram;
 import java.util.Scanner;
-/**
- *
- * @author asus
- */
+
 public class Anagram {
 
     /**
@@ -123,12 +112,12 @@ package Calculator;
 import.java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
-/**
-     * @param args the command line arguments
-     */
     
 public class Calculator {
-
+	
+   /**
+    * @param args the command line arguments
+    */
     private double[] equation;
     private double value;
     public Calculator(double x, double y, String c){
