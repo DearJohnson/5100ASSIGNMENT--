@@ -26,7 +26,7 @@ public class Hangman {
 
     public static void main(String[] args) throws FileNotFoundException {
         // TODO code application logic here
-        Scanner input = new Scanner(new FileReader("C:/Users/apple/Documents/NetBeansProjects/hangman/src/words.txt"));
+        Scanner input = new Scanner(new FileReader("C:/NEU/JAVA/NetBeansProjects/hangman/src/words.txt"));
         words = new ArrayList<String>();
         while (input.hasNextLine()) {
             words.add(input.nextLine());
@@ -39,20 +39,19 @@ public class Hangman {
 
     
 private static void playRound() throws FileNotFoundException {
-        Scanner game_state = new Scanner(new FileReader("C:/Users/apple/Documents/NetBeansProjects/hangman/src/game_results.txt"));
+        Scanner game_state = new Scanner(new FileReader("C:/NEU/JAVA/NetBeansProjects/hangman/src/game_results.txt"));
         game_state.useDelimiter("\\s*;\\s*");
-        printGameStateString(game_state); // show title screen on console (first in game_state.txt)
+        printGameStateString(game_state); // show title screen on console (first in game_results.txt)
         Random pick = new Random();
         int wordPoolSize = words.size(); // dynamic approach: variable that measures number of words in text file
         int  n = pick.nextInt(wordPoolSize) + 1;
-        word = words.get(n-1); // to-do: replace with .remove() and handle empty words list
+        word = words.get(n-1); // replace with .remove() and handle empty words list
         hidden = new String(new char[word.length()]).replace("\0", "_");
         String letters  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // remaining letters to pick from
         String alphabet  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // required for validity check
         int stage_tracker;
 
         while (hidden.contains("_") && stage < 7) {
-            // System.out.println(" \n \n" + "ONLY FOR DEVELOPMENT // " + "STAGE:" + stage + " | " + "WORD:" + word);
             System.out.println(" \n \n" + "HIDDEN WORD: " + hidden.replace("", " ").trim());
             System.out.println(" \n \n" + letters.replace("", " ").trim());
             System.out.println(" \n \n" + "Please take a guess (enter a letter A - Z)");
@@ -120,7 +119,7 @@ private static void playRound() throws FileNotFoundException {
         }
     }
     
-    // each time it's called it will print next set of characters surrounded by ; and ; in file game_state.txt
+    // each time it's called it will print next set of characters surrounded by ; and ; in file game_results.txt
     private static void printGameStateString(Scanner state) throws FileNotFoundException{
     	if( state.hasNext() ){
 	    System.out.println(state.next());
