@@ -33,12 +33,10 @@ public class Hangman {
         }
         input.close();
         System.out.println("Welcome To Hangman Game!");
-
         playRound();
     }
-
-    
-private static void playRound() throws FileNotFoundException {
+	
+    private static void playRound() throws FileNotFoundException {
         Scanner game_state = new Scanner(new FileReader("C:/NEU/JAVA/NetBeansProjects/hangman/src/game_results.txt"));
         game_state.useDelimiter("\\s*;\\s*");
         printGameStateString(game_state); // show title screen on console (first in game_results.txt)
