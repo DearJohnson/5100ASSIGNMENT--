@@ -7,7 +7,7 @@ package dessertshoppe;
 
 /**
  *
- * @author apple
+ * @author asus
  */
 
 public class TestCheckout {
