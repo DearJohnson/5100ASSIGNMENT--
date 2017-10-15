@@ -13,6 +13,7 @@ import java.util.List;
  * @author asus
  */
 public class SpiralOrder {
+    
     public List<Integer> matrix(int[][] matrix){
     List<Integer> a;
     a = new LinkedList<>();
@@ -50,8 +51,9 @@ public class SpiralOrder {
                 }
     }
     }
-return a;
-    /**
+    return a;
+    
+     /**
      * @param args the command line arguments
      */
    
