@@ -11,10 +11,6 @@ import java.util.Scanner;
  * @author asus
  */
 public class ATMOperate {
-
-    /**
-     * @param args the command line arguments
-     */
 	
     public static void main(String[] args) {
         
