@@ -7,8 +7,9 @@ package atmtest;
 
 /**
  *
- * @author apple
+ * @author asus
  */
+
 public class AmountTransfer extends Transaction{
 	
     private double amount;
