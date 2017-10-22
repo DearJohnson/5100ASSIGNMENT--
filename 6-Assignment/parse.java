@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package myindexoutofboundexception;
+package parse;
 // Modify as follows:
 // 1. add "catch (FileNotFoundException e)" since the statement "input = new RandomAccessFile(file, "r");"
 // 2. add "catch (IOException e)" since the statement "line = input.readLine();"
@@ -16,7 +16,7 @@ import java.io.RandomAccessFile;
 
 /**
  *
- * @author apple
+ * @author asus
  */
 public static void parse(File file) throws IOException {
     RandomAccessFile input = null;
