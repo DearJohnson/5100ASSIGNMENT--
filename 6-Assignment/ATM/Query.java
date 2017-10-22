@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atmtest;
+package atmoperate;
 
 /**
  *
- * @author apple
+ * @author asus
  */
+
 public class Query extends Transaction{
     public Query(Account ac){
 	account=ac;
