@@ -9,8 +9,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author apple
+ * @author asus
  */
+
 public class Bank {
     private ArrayList <UserData> atm=new ArrayList();
     private ArrayList <User> user=new ArrayList();
