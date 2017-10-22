@@ -60,8 +60,8 @@ public class Account {
 	card.setaccountNo(AccountNumber);
     }
 	
-    public boolean passwordValidation(int num,int pin){
-	return card.passwordValidations(num, pin);
+    public boolean passwordValidation(int num,int psw){
+	return card.passwordValidations(num, psw);
     }	
 	
     public void passwordChange(int psw){
