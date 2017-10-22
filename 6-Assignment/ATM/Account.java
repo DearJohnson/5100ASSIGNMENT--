@@ -7,8 +7,9 @@ package atmtest;
 
 /**
  *
- * @author apple
- */
+ * @author asus
+ **/
+
 public class Account {
     private String owner;
     private int AccountNumber;
