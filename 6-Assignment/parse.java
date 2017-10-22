@@ -5,8 +5,9 @@
  */
 package myindexoutofboundexception;
 // Modify as follows:
-// 1. We can see the statement "input = new RandomAccessFile(file, "r");" and we need to add the statements "throws FileNotFoundException" and "catch (FileNotFoundException e)".
-// 2. We can see the statement "while ((line = input.readLine()) != null)" and we need to add the statements "throws IOException" and "catch (IOException e)".
+// 1. add "catch (FileNotFoundException e)" since the statement "input = new RandomAccessFile(file, "r");"
+// 2. add "catch (IOException e)" since the statement "line = input.readLine();"
+// 3. add "throws IOException" in the method signature since the statement "input.close();"
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,25 +18,24 @@ import java.io.RandomAccessFile;
  *
  * @author apple
  */
-public class parse{
-    public static void parse(File file) throws FileNotFoundException, IOException {
-        RandomAccessFile input = null;
-        String line = null;
-      
-        try {
-            input = new RandomAccessFile(file, "r");
-            while ((line = input.readLine()) != null) {
-                System.out.println(line);
-            }
-            return;
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
-        } catch (IOException e){
-            e.printStackTrace();
-        } finally {
-            if (input != null) {
-                input.close();
-            }
+public static void parse(File file) throws IOException {
+    RandomAccessFile input = null;
+    String line = null;
+    
+    try {
+        input = new RandomAccessFile(file, "r");
+        while ((line = input.readLine()) != null) {// IOException
+            System.out.println(line);
+        }
+        return;
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } finally {
+        if (input != null) {
+            input.close();
         }
     }
 }
+   
