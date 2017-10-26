@@ -1,4 +1,4 @@
-// Q3
+// Soultion of Q3
 // Given a non-empty integer array of size, find the minimum number of moves required to make all array elements equal, where a move is incrementing n - 1 elements by 1
 // Example:
 // Input: [1,2,3]
