@@ -1,3 +1,8 @@
+// Solution of Q5
+// A Maze is given as N*N binary matrix of blocks where source block is the upper left most block i.e., maze[0][0] and destination block is lower rightmost block i.e., maze[N-1][N-1]
+// A rat starts from source and has to reach destination, the rat can move only in two directions: forward and down
+// In the maze matrix, 0 means the block is dead end and 1 means the block can be used in the path from source to destination, Your function should take the maze as an input and return an ArrayList of the resulting path
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
