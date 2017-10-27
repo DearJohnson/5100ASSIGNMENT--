@@ -36,5 +36,6 @@ public class arrangeCoins {
             stair++;         
         }
         return stair - n;
-    }    
+    }
+   // test case : int n = 8, your fuction will return 2
 }
