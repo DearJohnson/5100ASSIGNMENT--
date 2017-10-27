@@ -46,7 +46,7 @@ public class extraSolution {
     // since the rat can only move either downward or right, one grid at a time
     // then the problem can be solved by first solving the following subproblems
     private boolean findPathSuccessfully(int[][] maze, ArrayList<Cell> findPath, int x, int y){
-        
+        // Validate isInpath() first
         if(maze[x][y] == 0)
             return false;
         
