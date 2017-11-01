@@ -38,6 +38,7 @@ public class OmitVowel {
         
     }
     public static String removeVowelsFromString(String a){
+	// Consider upper case vowels
         String a1;
         a1 = a.replace("a","");
         
@@ -94,7 +95,7 @@ public class Anagram {
          for(int i=0;i<c;i++){
          char item=s1.charAt(i);
            for(int j=0;j<d;j++){
-       
+           // Did I miss anthing? i should be j? (-1.5)
            char item1=s2.charAt(i);
              if(item==item1){
                  s1=removeAt(s1,i);
