@@ -26,6 +26,7 @@ public class Hangman {
 
     public static void main(String[] args) throws FileNotFoundException {
         // TODO code application logic here
+	// Nice input
         Scanner input = new Scanner(new FileReader("C:/NEU/JAVA/NetBeansProjects/hangman/src/words.txt"));
         words = new ArrayList<String>();
         while (input.hasNextLine()) {
