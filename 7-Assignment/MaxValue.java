@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package assingnment7;
+package assignments7;
 
 public class MaxValue extends Thread{
     private int low, high;
