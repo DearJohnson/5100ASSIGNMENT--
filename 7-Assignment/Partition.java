@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package assingnment7;
+package assignments7;
 
-/**
- *
- * @author Administrator
- */
 public class Partition {
     public static void findPartition(int[] arr) {
         int totalSum = 0;
