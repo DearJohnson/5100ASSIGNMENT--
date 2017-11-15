@@ -461,3 +461,4 @@ public class FindMedianSortedArrays {
 	System.out.println(findMedianSortedArrays(nums1,nums2));    
     }
 }
+ 
