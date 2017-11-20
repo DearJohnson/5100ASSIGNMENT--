@@ -59,7 +59,7 @@ public class MyJson {
     }
     
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\\\Program Files (x86)\\NetBeansProjects\\Assignment8\\src\\assignment8\\Question3_camino.txt");
+        File file = new File("C:\\Program Files (x86)\\NetBeansProjects\\Assignment8\\src\\assignment8\\Question3_camino.txt");
         ArrayList<Vehicle> vehicles = readAndGetVehicles(file);
         String s = getJsonString(vehicles);
         writeToFile(s, file.getParent());
