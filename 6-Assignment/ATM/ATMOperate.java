@@ -105,4 +105,4 @@ public class ATMOperate {
                 c =scanner.next().charAt(0);
             }
     }
-}   
+}    
