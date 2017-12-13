@@ -64,5 +64,4 @@ public class MyJson {
         String s = getJsonString(vehicles);
         writeToFile(s, file.getParent());
     }
-    
 }
