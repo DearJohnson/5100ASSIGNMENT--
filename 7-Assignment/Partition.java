@@ -33,5 +33,5 @@ public class Partition {
         findPartition(new int[] {1, 5, 11, 5});
         findPartition(new int[] {1, 5, 3});
     }
-    
+   
 }
